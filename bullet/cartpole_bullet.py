@@ -16,13 +16,12 @@ import numpy as np
 import time
 import subprocess
 import pybullet as p
-import pybullet_data
 from pkg_resources import parse_version
 
 logger = logging.getLogger(__name__)
 
 
-class CartPoleBulletEnv(gym.Env):
+class CartPoleBulletEnv2(gym.Env):
   metadata = {'render.modes': ['human', 'rgb_array'], 'video.frames_per_second': 50}
 
   def __init__(self, renders=True):
@@ -78,7 +77,7 @@ class CartPoleBulletEnv(gym.Env):
   def reset(self):
     #    print("-----------reset simulation---------------")
     p.resetSimulation()
-    self.cartpole = p.loadURDF(os.path.join(pybullet_data.getDataPath(), "cartpole.urdf"),
+    self.cartpole = p.loadURDF("cartpole2.urdf",
                                [0, 0, 0])
     p.changeDynamics(self.cartpole, -1, linearDamping=0, angularDamping=0)
     p.changeDynamics(self.cartpole, 0, linearDamping=0, angularDamping=0)
