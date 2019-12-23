@@ -12,7 +12,7 @@ def register(id, *args, **kvargs):
 # ------------bullet-------------
 
 register(
-    id='CartPoleBulletEnv-v1',
+    id='CartPoleBulletEnv-v2',
     entry_point='pybullet_envs.bullet:CartPoleBulletEnv2',
     max_episode_steps=200,
     reward_threshold=190.0,

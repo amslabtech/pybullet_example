@@ -12,7 +12,7 @@ from pybullet_envs.bullet.cartpole_bullet import CartPoleBulletEnv2
 
 
 def main():
-  env = gym.make('CartPoleBulletEnv-v1')
+  env = gym.make('CartPoleBulletEnv-v2')
   act = deepq.load("cartpole_model.pkl")
 
   while True:
